@@ -64,8 +64,8 @@ select * from tb_pizzas where preco > 45.00 order by preco;
 
 select * from tb_pizzas where preco between 50.00 and 100.00 order by preco;
 
-select * from tb_pizzas where sabor like "%m%"; 
+select id,sabor,tamanho,preco,disponivel, cat_id as catedoria from tb_pizzas where sabor like "%c%"; 
 
 select * from tb_pizzas inner join tb_categorias on tb_pizzas.cat_id = tb_categorias.id;
 
-select * from tb_pizzas inner join tb_categorias on tb_pizzas.cat_id = tb_categorias.id where categoria = "doce";
+select * from tb_pizzas as p inner join tb_categorias as c on p.cat_id = c.id where categoria = "doce";
